@@ -35,3 +35,6 @@ Ziv is a rewards app for businesses that connects PassKit services, Stripe, and 
 ## Testing
 
 Run tests by pressing `Cmd + U` in Xcode to execute the unit tests located in `ZivTests/ZivTests.swift`.
+
+### Clavaa Features Testing
+The `ZivTests.swift` file has been updated to include assertions for the new Clavaa-inspired features. When running tests with `Cmd + U`, Xcode will automatically execute the validation for `cashbackPercentage`, `is10xReward` boolean flags in the models, and the `totalCashbackIssued` calculation within the `DashboardViewModel`.
