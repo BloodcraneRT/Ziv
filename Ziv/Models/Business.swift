@@ -7,4 +7,5 @@ struct Business: Identifiable, Codable {
     var stripeAccountId: String?
     var hasActiveSubscription: Bool
     var integratedPlatforms: [String]
+    var acceptsContactless: Bool = true
 }

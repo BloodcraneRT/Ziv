@@ -14,6 +14,7 @@ struct IntegrationsView: View {
                 }
 
                 Section(header: Text("Customer Wallet")) {
+                    IntegrationRow(name: "Clavaa Wallet", description: "Accept contactless payments and 10x rewards", isConnected: true, icon: "iphone.radiowaves.left.and.right")
                     IntegrationRow(name: "Apple PassKit", description: "Issue digital loyalty cards", isConnected: true, icon: "wallet.pass.fill")
                 }
             }

@@ -7,6 +7,8 @@ struct Reward: Identifiable, Codable {
     var pointsRequired: Int
     var isActive: Bool
     var partnerApp: PartnerApp?
+    var cashbackPercentage: Double?
+    var is10xReward: Bool = false
 
     enum PartnerApp: String, Codable {
         case clover = "Clover"

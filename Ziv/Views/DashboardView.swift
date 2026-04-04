@@ -12,12 +12,14 @@ struct DashboardView: View {
                 } else {
                     VStack(spacing: 20) {
                         HStack {
+                            StatCard(title: "Cashback Issued", value: "$\(String(format: "%.2f", viewModel.totalCashbackIssued))", icon: "dollarsign.circle.fill")
+                            StatCard(title: "10x Rewards", value: "\(viewModel.active10xRewards) Active", icon: "bolt.fill")
+                        }
+
+                        HStack {
                             StatCard(title: "Total Customers", value: "\(viewModel.totalCustomers)", icon: "person.3.fill")
                             StatCard(title: "Active Rewards", value: "\(viewModel.activeRewards)", icon: "star.fill")
                         }
-
-                        StatCard(title: "Points Issued", value: "\(viewModel.totalPointsIssued)", icon: "gift.fill")
-                            .frame(maxWidth: .infinity)
 
                         Spacer()
                     }

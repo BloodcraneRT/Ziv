@@ -52,7 +52,26 @@ struct RewardRow: View {
                 .font(.subheadline)
                 .foregroundColor(.secondary)
 
-            HStack {
+            HStack(spacing: 8) {
+                if reward.is10xReward {
+                    Text("10x Rewards")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .padding(4)
+                        .background(Color.yellow.opacity(0.3))
+                        .foregroundColor(.orange)
+                        .cornerRadius(4)
+                }
+
+                if let cashback = reward.cashbackPercentage {
+                    Text("\(String(format: "%.0f", cashback))% Cashback")
+                        .font(.caption)
+                        .padding(4)
+                        .background(Color.green.opacity(0.1))
+                        .foregroundColor(.green)
+                        .cornerRadius(4)
+                }
+
                 if let partner = reward.partnerApp {
                     Text("via \(partner.rawValue)")
                         .font(.caption)
