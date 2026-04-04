@@ -7,6 +7,7 @@ class DashboardViewModel: ObservableObject {
     @Published var totalPointsIssued: Int = 0
     @Published var totalCashbackIssued: Double = 0
     @Published var active10xRewards: Int = 0
+    @Published var financialGoalProgress: Double = 0.0
     @Published var isLoading: Bool = false
 
     init() {
@@ -22,6 +23,7 @@ class DashboardViewModel: ObservableObject {
             self.totalPointsIssued = 45000
             self.totalCashbackIssued = 8450.50
             self.active10xRewards = 3
+            self.financialGoalProgress = 500.0
             self.isLoading = false
         }
     }

@@ -12,6 +12,26 @@ struct DashboardView: View {
                 } else {
                     VStack(spacing: 20) {
                         HStack {
+                            Text("Dashboard")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            Spacer()
+                            Button(action: {
+                                // Present QR Scanner
+                            }) {
+                                Image(systemName: "qrcode.viewfinder")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .background(Color.black)
+                                    .cornerRadius(10)
+                            }
+                        }
+
+                        StatCard(title: "Financial Goal: Summer Trip", value: "$\(String(format: "%.0f", viewModel.financialGoalProgress)) / $1000", icon: "target")
+                            .frame(maxWidth: .infinity)
+
+                        HStack {
                             StatCard(title: "Cashback Issued", value: "$\(String(format: "%.2f", viewModel.totalCashbackIssued))", icon: "dollarsign.circle.fill")
                             StatCard(title: "10x Rewards", value: "\(viewModel.active10xRewards) Active", icon: "bolt.fill")
                         }
@@ -26,7 +46,7 @@ struct DashboardView: View {
                     .padding()
                 }
             }
-            .navigationTitle("Dashboard")
+            .navigationBarHidden(true)
         }
     }
 }

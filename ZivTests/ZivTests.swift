@@ -39,6 +39,7 @@ final class ZivTests: XCTestCase {
         XCTAssertEqual(viewModel.totalPointsIssued, 0)
         XCTAssertEqual(viewModel.totalCashbackIssued, 0)
         XCTAssertEqual(viewModel.active10xRewards, 0)
+        XCTAssertEqual(viewModel.financialGoalProgress, 0.0)
     }
 
 }
