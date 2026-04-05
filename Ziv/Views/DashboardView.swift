@@ -26,6 +26,7 @@ struct DashboardView: View {
                                     .background(Color.black)
                                     .cornerRadius(10)
                             }
+                            .accessibilityLabel("Scan QR Code")
                         }
 
                         StatCard(title: "Financial Goal: Summer Trip", value: "$\(String(format: "%.0f", viewModel.financialGoalProgress)) / $1000", icon: "target")
