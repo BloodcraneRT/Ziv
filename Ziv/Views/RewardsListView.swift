@@ -26,6 +26,7 @@ struct RewardsListView: View {
                 }) {
                     Image(systemName: "plus")
                 }
+                .accessibilityLabel("Add Reward")
             }
             .sheet(isPresented: $showingAddReward) {
                 // Placeholder for add reward view
