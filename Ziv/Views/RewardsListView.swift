@@ -13,6 +13,23 @@ struct RewardsListView: View {
                         ProgressView()
                         Spacer()
                     }
+                } else if viewModel.rewards.isEmpty {
+                    VStack(spacing: 12) {
+                        Image(systemName: "star.slash")
+                            .font(.system(size: 40))
+                            .foregroundColor(.secondary)
+                            .accessibilityHidden(true)
+                        Text("No rewards yet")
+                            .font(.headline)
+                        Text("Tap + to create your first reward.")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(.vertical, 40)
+                    .frame(maxWidth: .infinity)
+                    .listRowBackground(Color.clear)
+                    .accessibilityElement(children: .combine)
                 } else {
                     ForEach(viewModel.rewards) { reward in
                         RewardRow(reward: reward)
