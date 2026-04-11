@@ -70,6 +70,8 @@ struct StatCard: View {
                 .font(.title)
                 .fontWeight(.bold)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(title), \(value)")
         .padding()
         .frame(maxWidth: .infinity)
         .background(Color(.systemGray6))
