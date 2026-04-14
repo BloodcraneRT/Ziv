@@ -74,6 +74,8 @@ struct StatCard: View {
         .frame(maxWidth: .infinity)
         .background(Color(.systemGray6))
         .cornerRadius(12)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(title), \(value)")
     }
 }
 
