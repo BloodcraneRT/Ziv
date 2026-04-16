@@ -1,3 +1,7 @@
 ## 2024-05-24 - Empty States in SwiftUI Lists
 **Learning:** SwiftUI `List` components do not provide default empty states, leaving users with a blank screen which is a poor UX. When adding a custom empty state inside a `List`, using `listRowBackground(Color.clear)` is essential to prevent it from rendering like a standard row. Additionally, grouping the empty state elements with `accessibilityElement(children: .combine)` ensures VoiceOver reads the empty state logically as a single entity rather than disjointed text and icons.
 **Action:** Always implement explicit empty states for SwiftUI `List` or `ScrollView` components that display dynamic content. Ensure the empty state provides a clear explanation and, if applicable, an actionable step (like a call-to-action to add an item). Use `accessibilityElement(children: .combine)` for combined text/icon states to optimize screen reader experience.
+
+## 2024-05-24 - Data Card Accessibility in SwiftUI
+**Learning:** When displaying data in a visual card format (like a stat card with an icon, title, and value), VoiceOver reads each text element separately if not grouped. This creates a disjointed and verbose experience for screen reader users.
+**Action:** Group related text elements in data cards into a single logical VoiceOver element using `.accessibilityElement(children: .ignore)` alongside a combined `.accessibilityLabel` (e.g., `\(title), \(value)`) to prevent overly verbose and fragmented screen reader output.
