@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var showLogoutConfirmation = false
+
     var body: some View {
         NavigationView {
             List {
@@ -33,9 +35,21 @@ struct SettingsView: View {
 
                 Section {
                     Button("Log Out") {
-                        // Log out action
+                        showLogoutConfirmation = true
                     }
                     .foregroundColor(.red)
+                    .confirmationDialog(
+                        "Are you sure you want to log out?",
+                        isPresented: $showLogoutConfirmation,
+                        titleVisibility: .visible
+                    ) {
+                        Button("Log Out", role: .destructive) {
+                            // Log out action
+                        }
+                        Button("Cancel", role: .cancel) {}
+                    } message: {
+                        Text("You will need to sign back in to access your business data.")
+                    }
                 }
             }
             .navigationTitle("Settings")
