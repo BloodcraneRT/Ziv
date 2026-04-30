@@ -5,3 +5,7 @@
 ## 2024-05-24 - Grouping Text Elements in Data Cards
 **Learning:** In SwiftUI projects, complex data display components like `StatCard` (which combine icons, titles, and values) can result in disjointed and overly verbose VoiceOver reading if left unmanaged. Screen readers treat each text element as a separate entity.
 **Action:** Adhere to accessibility conventions by grouping related text elements into a single logical VoiceOver element using `.accessibilityElement(children: .ignore)` alongside a combined `.accessibilityLabel` to provide a clean, consolidated announcement (e.g., "Total Revenue, $5,000").
+
+## 2024-05-24 - Confirmation Dialogs for Destructive Actions in Lists
+**Learning:** In SwiftUI applications, placing destructive or disruptive actions (such as 'Log Out' or 'Delete') directly as buttons within scrollable `List` components can easily lead to unintended execution from accidental mistaps or errant scrolling gestures.
+**Action:** Always wrap destructive or disruptive actions presented as buttons in scrollable lists within a `.confirmationDialog` or `.alert` to enforce user intent and prevent unintended execution.
